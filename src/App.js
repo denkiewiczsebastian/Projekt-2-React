@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
 
-import Balance from "./components/Balance";
-import IncomeForm from "./components/IncomeForm";
-import ExpenseForm from "./components/ExpenseForm";
-import IncomeList from "./components/IncomeList";
-import ExpenseList from "./components/ExpenseList";
+import Balance from "./components/Balance/Balance";
+import IncomeForm from "./components/IncomeForm/IncomeForm";
+import ExpenseForm from "./components/ExpenseForm/ExpenseForm";
+import IncomeList from "./components/IncomeList/IncomeList";
+import ExpenseList from "./components/ExpenseList/ExpenseList";
 
 function App() {
   const [incomes, setIncomes] = useState([]);
@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Budżet domowy</h1>
+      <h1 className="header">Budżet domowy</h1>
       <Balance incomes={incomes} expenses={expenses} />
       <IncomeForm addIncome={addIncome} />
       <ExpenseForm addExpense={addExpense} />

@@ -1,4 +1,5 @@
 import React from "react";
+import "./Balance.css";
 
 function Balance({ incomes, expenses }) {
   const totalIncome = incomes.reduce((acc, income) => acc + income.amount, 0);
@@ -9,34 +10,21 @@ function Balance({ incomes, expenses }) {
   const balance = totalIncome - totalExpense;
 
   let balanceText = "";
-  let balanceColor = "";
+  let balanceColorClass = "";
 
   if (balance > 0) {
     balanceText = `Możesz jeszcze wydać ${balance} złotych`;
-    balanceColor = "green";
+    balanceColorClass = "green";
   } else if (balance === 0) {
     balanceText = "Bilans wynosi zero";
-    balanceColor = "black";
+    balanceColorClass = "black";
   } else {
     balanceText = `Bilans jest ujemny. Jesteś na minusie ${Math.abs(
       balance
     )} złotych`;
-    balanceColor = "red";
+    balanceColorClass = "red";
   }
-
-  return (
-    <div
-      className="balance"
-      style={{
-        textAlign: "center",
-        fontWeight: "bold",
-        marginBottom: "10px",
-        color: balanceColor,
-      }}
-    >
-      {balanceText}
-    </div>
-  );
+  return <div className={`balance ${balanceColorClass}`}>{balanceText}</div>;
 }
 
 export default Balance;
