@@ -56,7 +56,7 @@ function ExpenseList({ expenses, deleteItem, editItem }) {
             </>
           ) : (
             <>
-              {expense.name}: {expense.amount} zł
+              {expense.name}: {expense.amount.toFixed(2)} zł
               <button
                 className="button"
                 onClick={() => handleEdit(index, expense.name, expense.amount)}
@@ -71,9 +71,9 @@ function ExpenseList({ expenses, deleteItem, editItem }) {
               </button>
             </>
           )}
-          {error && <p className="error">{error}</p>}
         </li>
       ))}
+      {error && <p className="error">{error}</p>}
     </ul>
   );
 }

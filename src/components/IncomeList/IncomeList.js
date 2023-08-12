@@ -52,7 +52,7 @@ function IncomeList({ incomes, deleteItem, editItem }) {
             </>
           ) : (
             <>
-              {income.name}: {income.amount} zł
+              {income.name}: {income.amount.toFixed(2)} zł
               <button
                 className="button"
                 onClick={() => handleEdit(index, income.name, income.amount)}

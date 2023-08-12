@@ -1,4 +1,3 @@
-import React from "react";
 import "./Balance.css";
 
 function Balance({ incomes, expenses }) {
@@ -13,7 +12,7 @@ function Balance({ incomes, expenses }) {
   let balanceColorClass = "";
 
   if (balance > 0) {
-    balanceText = `Możesz jeszcze wydać ${balance} złotych`;
+    balanceText = `Możesz jeszcze wydać ${balance.toFixed(2)} złotych`;
     balanceColorClass = "green";
   } else if (balance === 0) {
     balanceText = "Bilans wynosi zero";
@@ -21,7 +20,7 @@ function Balance({ incomes, expenses }) {
   } else {
     balanceText = `Bilans jest ujemny. Jesteś na minusie ${Math.abs(
       balance
-    )} złotych`;
+    ).toFixed(2)} złotych`;
     balanceColorClass = "red";
   }
   return <div className={`balance ${balanceColorClass}`}>{balanceText}</div>;
